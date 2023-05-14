@@ -1,14 +1,14 @@
-# react-native-obfuscating-transformer
+# rn-obfuscating-transformer
 
 Obfuscate selected source files when building for React Native.
 
 ## Installation
 
-    yarn add react-native-obfuscating-transformer --dev
+    yarn add rn-obfuscating-transformer --dev
 
 or
 
-    npm install react-native-obfuscating-transformer --save-dev
+    npm install rn-obfuscating-transformer --save-dev
 
 ## Usage
 
@@ -27,7 +27,7 @@ or
 #### /transformer.js
 
 ```js
-const obfuscatingTransformer = require("react-native-obfuscating-transformer")
+const obfuscatingTransformer = require("rn-obfuscating-transformer")
 
 module.exports = obfuscatingTransformer({
   /* options */
@@ -49,7 +49,7 @@ module.exports = obfuscatingTransformer({
 #### /transformer.js
 
 ```js
-const obfuscatingTransformer = require("react-native-obfuscating-transformer")
+const obfuscatingTransformer = require("rn-obfuscating-transformer")
 
 module.exports = obfuscatingTransformer({
   /* options */
@@ -68,8 +68,8 @@ you don't need to set this option.
 TypeScript example:
 
 ```diff
- const obfuscatingTransformer = require('react-native-obfuscating-transformer')
-+ const typescriptTransformer = require('react-native-typescript-transformer')
+ const obfuscatingTransformer = require('rn-obfuscating-transformer')
++ const typescriptTransformer = require('rn-typescript-transformer')
 
  module.exports = obfuscatingTransformer({
 +  upstreamTransformer: typescriptTransformer

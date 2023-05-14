@@ -1,6 +1,6 @@
 {
-  "name": "@thelonelyastronaut/react-native-obfuscating-transformer",
-  "version": "1.0.0",
+  "name": "rn-obfuscating-transformer",
+  "version": "1.0.1",
   "description": "Obfuscating transformer for react-native",
   "main": "dist/index.js",
   "repository": "https://github.com/TheLonelyAstronaut/react-native-obfuscating-transformer",
