@@ -1,4 +1,5 @@
 import { Node } from "@babel/core"
+import { File } from '@babel/types';
 import { RawSourceMap, SourceMapConsumer } from "source-map"
 import * as semver from "semver"
 import {
@@ -10,9 +11,10 @@ import traverse from "@babel/traverse"
 import generate from "@babel/generator";
 
 export interface MetroTransformerResult {
-  ast?: Node
+  ast?: File
   code?: string
   map?: string | RawSourceMap | MetroRawSourceMap
+  functionMap?: string | RawSourceMap | MetroRawSourceMap
 }
 
 export interface MetroTransformer {
@@ -102,7 +104,7 @@ export function maybeTransformMetroResult(
   }
 }
 
-export function generateAndConvert(ast: Node, filename: string): MetroTransformerResult {
+export function generateAndConvert(ast: File, filename: string): MetroTransformerResult {
   let generatorResult = generate(ast, {
     filename: filename,
     retainLines: true,

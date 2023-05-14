@@ -16,7 +16,7 @@ const numberedLines = fs
 
 describe("convertMetroRawSourceMapToStandardSourceMap", () => {
   it("takes a raw source map and converts it to a non-raw source map", () => {
-    const transformer = getMetroTransformer(47)
+    const transformer = getMetroTransformer(71)
 
     const { map, code } = transformer.transform({
       filename: require.resolve("./files/numberedLines.js"),
@@ -25,6 +25,8 @@ describe("convertMetroRawSourceMapToStandardSourceMap", () => {
         retainLines: false,
       },
     })
+
+    console.log(code, map)
 
     if (typeof code !== "string") {
       // use this rather than expect for typescript's sake
@@ -68,7 +70,7 @@ describe("composeSourceMaps", () => {
 
     expect(tsTranspileResult.outputText).toMatchSnapshot()
 
-    const upstreamTransformResult = getMetroTransformer(47).transform({
+    const upstreamTransformResult = getMetroTransformer(71).transform({
       filename,
       src: tsTranspileResult.outputText,
       options: {

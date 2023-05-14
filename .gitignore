@@ -53,6 +53,8 @@ jspm_packages/
 
 # dotenv environment variables file
 .env
+*.npmrc
+
 
 dist
 package
